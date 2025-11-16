@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式測試</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>PDF擷取</h1>
+        
+        <label for="pdf-file" class="file-label">選擇 PDF 檔案</label>
+        <input type="file" id="pdf-file" accept=".pdf"> 
+        <div id="file-name" class="file-name-display">尚未選擇檔案</div>
+        
+        <button id="upload-button" disabled>上傳並處理</button>
+
+        <div class="loader" id="loader"></div>
+        
+        <div id="status-message"></div>
+    </div>
+
+    <div class="container" id="phase-two-container">
+        <h1>資料分析</h1>
+        
+        <label for="file-excel-p2" class="file-label">1. 選擇 Excel (.xlsx) 檔案</label>
+        <input type="file" id="file-excel-p2" accept=".xlsx, .xls"> 
+        <div id="file-name-excel-p2" class="file-name-display">請把stage1_output.xlsx放進這裡</div>
+
+        <label for="file-txt-p2" class="file-label">2. 選擇 TXT (.txt) 檔案</label>
+        <input type="file" id="file-txt-p2" accept=".txt"> 
+        <div id="file-name-txt-p2" class="file-name-display">尚未選擇 TXT</div>
+        
+        <button id="upload-button-p2" disabled>上傳並比對</button>
+
+        <div class="loader" id="loader-p2"></div>
+        
+        <div id="status-message-p2"></div>
+    </div>
+
+    <div class="phase-3-4-wrapper">
+
+        <div class="container" id="phase-three-container">
+            <h1>階段三：參數正規化 </h1>
+            
+            <label for="file-csv-p3" class="file-label">選擇 CSV 檔案 (階段二產出)</label>
+            <input type="file" id="file-csv-p3" accept=".csv"> 
+            <div id="file-name-csv-p3" class="file-name-display">請把stage2_output.csv放進這裡</div>
+            
+            <button id="upload-button-p3" disabled>上傳並正規化</button>
+
+            <div class="loader" id="loader-p3"></div>
+            
+            <div id="status-message-p3"></div>
+        </div>
+
+        <div class="container" id="phase-four-container">
+            <h1>轉表模板生成</h1>
+            
+            <label for="file-csv-p4" class="file-label">選擇 CSV 檔案 (階段二產出)</label>
+            <input type="file" id="file-csv-p4" accept=".csv"> 
+            <div id="file-name-csv-p4" class="file-name-display">請把stage2_output.csv放進這裡</div>
+            
+            <button id="upload-button-p4" disabled>上傳並生成模板</button>
+
+            <div class="loader" id="loader-p4"></div>
+            
+            <div id="status-message-p4"></div>
+        </div>
+
+    </div> <script src="script.js" defer></script>
+    </div>
+
+    </div> <div class="container" id="phase-five-container">
+        <h1>階段五：資料映射 (JSON)</h1>
+        
+        <label for="file-csv-p5" class="file-label">選擇 CSV 檔案 (階段二產出)</label>
+        <input type="file" id="file-csv-p5" accept=".csv"> 
+        <div id="file-name-csv-p5" class="file-name-display">請把stage2_output.csv放進這裡</div>
+        
+        <button id="upload-button-p5" disabled>上傳並生成映射</button>
+
+        <div class="loader" id="loader-p5"></div>
+        
+        <div id="status-message-p5"></div>
+    </div>
+    <script src="script.js" defer></script>
+    <div id="status-message-p5"></div>
+    </div>
+    <div class="container" id="phase-six-container">
+        <h1>階段六：自動填寫報表</h1>
+        
+        <label for="file-excel-p6" class="file-label">1. 選擇 Excel 模板 </label>
+        <input type="file" id="file-excel-p6" accept=".xlsx, .xls"> 
+        <div id="file-name-excel-p6" class="file-name-display">尚未選擇 Excel 模板</div>
+
+        <label for="file-json-p6" class="file-label">2. 選擇 JSON 映射 </label>
+        <input type="file" id="file-json-p6" accept=".json"> 
+        <div id="file-name-json-p6" class="file-name-display">尚未選擇 JSON 映射</div>
+
+        <label for="file-txt-p6" class="file-label">3. 選擇 TXT 報告 (可多選)</label>
+        <input type="file" id="file-txt-p6" accept=".txt" multiple> <div id="file-name-txt-p6" class="file-name-display">尚未選擇 TXT 報告</div>
+        
+        <button id="upload-button-p6" disabled>上傳並填寫報表</button>
+
+        <div class="loader" id="loader-p6"></div>
+        
+        <div id="status-message-p6"></div>
+    </div>
+    <script src="script.js" defer></script>
+    
+</body>
+</html>

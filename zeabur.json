@@ -1,0 +1,7 @@
+{
+  "build": {
+    "apt_packages": [
+      "tesseract-ocr"
+    ]
+  }
+}

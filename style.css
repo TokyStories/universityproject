@@ -1,0 +1,139 @@
+/* --- 這是您 index.html 的「原始美觀」CSS --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; 
+    place-items: center;
+    min-height: 90vh;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 2rem 0; 
+}
+.container {
+    background: #ffffff;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+input[type="file"] {
+    display: none; /* 隱藏預設按鈕 */
+}
+.file-label {
+    display: block;
+    background: #3498db;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 1rem;
+}
+.file-label:hover {
+    background: #2980b9;
+}
+
+/* 檔案名稱顯示 */
+.file-name-display {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+    min-height: 1.2em;
+    word-break: break-all; 
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+}
+.file-name-display.selected {
+    color: #27ae60;
+    border-color: #27ae60;
+    font-weight: bold;
+}
+
+/* 統一套用按鈕樣式 */
+/* 【【修改】】: 擴展到 P3, P4, P5, P6 */
+#upload-button, #upload-button-p2, #upload-button-p3, #upload-button-p4, #upload-button-p5, #upload-button-p6 { 
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, opacity 0.3s;
+    margin-top: 1rem; 
+}
+/* 【【修改】】: 擴展到 P3, P4, P5, P6 */
+#upload-button:disabled, #upload-button-p2:disabled, #upload-button-p3:disabled, #upload-button-p4:disabled, #upload-button-p5:disabled, #upload-button-p6:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.loader {
+    display: none; 
+    margin: 1.5rem auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 【【修改】】: 擴展到 P3, P4, P5, P6 */
+#status-message, #status-message-p2, #status-message-p3, #status-message-p4, #status-message-p5, #status-message-p6 {
+    color: #e74c3c;
+    margin-top: 1rem;
+    font-weight: bold;
+    min-height: 1.2em; 
+}
+
+/* --- 【【新增 CSS 規則 (只為並排)】】 --- */
+
+/* 1. Wrapper 本身 */
+.phase-3-4-wrapper {
+    /* 讓 wrapper 本身佔據 body grid 的一行 */
+    grid-column: 1 / -1; 
+    
+    /* 在 wrapper 內部建立一個 2 欄的 grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; /* 保持與 body 相同的間距 */
+    
+    /* (關鍵) 讓 Wrapper 繼承 body 的 place-items 屬性 */
+    place-items: center; 
+    
+    /* (關鍵) 設定 wrapper 寬度 */
+    /* 400px + 400px + 2rem (32px) = 832px */
+    /* 內距 3rem*2*2 = 192px */
+    /* 總寬度約 1024px，使其在大螢幕上居中 */
+    width: 100%;
+    max-width: 1024px; 
+    box-sizing: border-box; 
+}
+
+/* 2. 覆寫 Wrapper 內部 .container 的樣式 */
+.phase-3-4-wrapper .container {
+    width: auto; /* 覆寫 400px，使其填滿 grid 欄位 */
+    margin-top: 0; /* 移除頂部間距，由 wrapper 的 gap 控制 */
+    /* (關鍵) 確保它在自己的 grid 欄位中 100% 寬 */
+    box-sizing: border-box;
+    width: 100%; 
+}
