@@ -1,7 +1,9 @@
 {
   "build": {
     "apt_packages": [
-      "tesseract-ocr"
+      "tesseract-ocr",
+      "tesseract-ocr-eng",
+      "tesseract-ocr-tchi"
     ]
   }
 }
