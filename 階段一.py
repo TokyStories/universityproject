@@ -15,7 +15,7 @@ load_dotenv()
 # 設定您的 Gemini API 金鑰
 # 建議將金鑰存放在環境變數中，以確保安全
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+#pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 # PDF 路徑
 #pdf_path = r"D:\someDATA\96-40318-02@A0.pdf"              #最早的HUB250            無法成常抽取
 #pdf_path = r"D:\someDATA\20250928\96-40321-01@I0.pdf"     #HUB250-111             可成常抽取
@@ -164,3 +164,4 @@ def process_pdf_to_excel(pdf_path: str, output_excel: str):
         print("❌ 重試次數已達上限，無法完成請求。請檢查您的 API 額度。")
         return False
     
+
