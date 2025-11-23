@@ -101,6 +101,8 @@ def process_pdf_to_excel(pdf_path: str, output_excel: str):
     Load 出現以\分開的多組內容時分開多行並且TEST PARAMETER相同時item相同輸出，同時電壓有多種時每種電壓都要有多種Load，而以,或其他'方式分開時不分行
     Dynamic Lood test有多種負載時不用分開測
 
+    100%,75%,50%,25% of the Max. Load為一個項目，不要拆開成4個項目
+
     填入時請將"Tin"更改為"Iin"，"VAC"前面不應出現"O"，請訂正成"0VAC"。
     在"Vo1"後的"V"放"LIMITS I","mVpp"放"LIMITS II"。
     在"Vo2"後面的參數例如"Vo2: +5.00 to +8.00 V"放置於"LIMITS III"。
@@ -164,4 +166,5 @@ def process_pdf_to_excel(pdf_path: str, output_excel: str):
         print("❌ 重試次數已達上限，無法完成請求。請檢查您的 API 額度。")
         return False
     
+
 
